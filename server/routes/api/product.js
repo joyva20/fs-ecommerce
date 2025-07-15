@@ -256,7 +256,7 @@ router.get(
                     merchant: req.user.merchant
                 }).populate('merchant', '_id');
 
-                const brandId = brands[0] ? .['_id'];
+                const brandId = brands[0] ? ._id;
 
                 products = await Product.find({})
                     .populate({
