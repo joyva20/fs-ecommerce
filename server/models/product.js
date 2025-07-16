@@ -53,6 +53,25 @@ const ProductSchema = new Schema({
     ref: 'Brand',
     default: null
   },
+  // Plant-specific fields
+  difficultyLevel: {
+    type: String,
+    enum: ['Mudah', 'Sedang', 'Sulit'],
+    default: 'Mudah'
+  },
+  lightRequirements: {
+    type: String,
+    enum: ['Rendah', 'Sedang', 'Tinggi'],
+    default: 'Sedang'
+  },
+  tags: {
+    type: [String],
+    default: []
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category'
+  },
   updated: Date,
   created: {
     type: Date,
